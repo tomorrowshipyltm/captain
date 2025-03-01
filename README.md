@@ -1,6 +1,6 @@
 # 简介
 - Captain是一个消息推送平台
-![captain图片](doc/images/captain.png)
+![](doc/images/captain.png)
 
 # 部署
 - springboot启动，最小依赖mysql和redis
