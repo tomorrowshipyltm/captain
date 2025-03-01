@@ -22,7 +22,7 @@ import java.util.List;
 public class SendRequest {
 
     /**
-     * 执行业务类型
+     * 执行业务类型, 目前只有2种：send发送和recall撤回
      *
      * @see com.java3y.austin.service.api.enums.BusinessCode
      * send:发送消息

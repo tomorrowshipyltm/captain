@@ -42,6 +42,8 @@ public class ProcessController {
 
         /**
          * 遍历流程节点
+         * 根据send或recall 取出责任链节点，然后依次执行
+         * 例如普通发送：preCheck、assembly、postCheck、sendMQ
          */
         List<BusinessProcess> processList = templateConfig.get(context.getCode()).getProcessList();
         for (BusinessProcess businessProcess : processList) {

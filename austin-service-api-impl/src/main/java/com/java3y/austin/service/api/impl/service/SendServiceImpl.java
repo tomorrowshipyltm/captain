@@ -49,6 +49,7 @@ public class SendServiceImpl implements SendService {
                 .needBreak(false)
                 .response(BasicResultVO.success()).build();
 
+        // processController根据context.code决定执行send或recall pipeline
         ProcessContext process = processController.process(context);
 
         return new SendResponse(process.getResponse().getStatus(), process.getResponse().getMsg(), (List<SimpleTaskInfo>) process.getResponse().getData());

@@ -74,6 +74,8 @@ public class PipelineConfig {
 
     /**
      * pipeline流程控制器
+     * 目前支持 common_send 和 recall 2个流程，后续可以扩展
+     * templateConfig 是一个hashMap，根据流程取出 流程节点
      * 后续扩展则加BusinessCode和ProcessTemplate
      *
      * @return
