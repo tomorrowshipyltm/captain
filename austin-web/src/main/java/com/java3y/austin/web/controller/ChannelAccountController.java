@@ -82,6 +82,7 @@ public class ChannelAccountController {
             throw new CommonException(RespStatusEnum.NO_LOGIN.getCode(), RespStatusEnum.NO_LOGIN.getMsg());
 
         }
+        // 如果登录账号为空，设置默认值
         creator = CharSequenceUtil.isBlank(creator) ? AustinConstant.DEFAULT_CREATOR : creator;
 
         return channelAccountService.list(creator);

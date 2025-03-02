@@ -13,8 +13,8 @@ import java.nio.charset.StandardCharsets;
 
 
 /**
- * @author 3y
  * 读取配置实现类
+ * apollo和nacos都是分布式配置中心，可以用作配置管理、服务注册发现
  */
 @Service
 public class ConfigServiceImpl implements ConfigService {
@@ -41,6 +41,11 @@ public class ConfigServiceImpl implements ConfigService {
     private NacosUtils nacosUtils;
 
 
+    /**
+     * 优先从apollo/nacos获取key-value，否则从本地读取
+     * @param key
+     * @param defaultValue
+     */
     @Override
     public String getProperty(String key, String defaultValue) {
         if (Boolean.TRUE.equals(enableApollo)) {

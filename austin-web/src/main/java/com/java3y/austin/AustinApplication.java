@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 /**
- * @author 3y
+ * 启动入口
  */
 @SpringBootApplication
 @Slf4j

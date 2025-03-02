@@ -9,11 +9,10 @@ import java.util.Map;
 /**
  * channel->Handler的映射关系
  *
- * @author 3y
  */
 @Component
 public class HandlerHolder {
-
+    // 一个hashMap维护发送渠道与handler的对应关系
     private final Map<Integer, Handler> handlers = new HashMap<>(128);
 
     public void putHandler(Integer channelCode, Handler handler) {

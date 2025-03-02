@@ -2,8 +2,9 @@ package com.java3y.austin.support.mq;
 
 
 /**
- * @author 3y
  * 发送数据至消息队列
+ * 有多种实现方式：eventBus、kafka、rocketMq、redis, 其中eventBus单机队列不支持tag过滤
+ * @Autowired KafkaTemplate rocketMqTemplate、redisTemplate;
  */
 public interface SendMqService {
     /**
@@ -11,7 +12,7 @@ public interface SendMqService {
      *
      * @param topic
      * @param jsonValue
-     * @param tagId
+     * @param tagId  用于分布式队列过滤
      */
     void send(String topic, String jsonValue, String tagId);
 

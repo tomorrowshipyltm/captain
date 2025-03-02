@@ -8,8 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * @author 3y
  * 渠道账号信息
+ * jpa（Java persistence api）和mybatis都是ORM框架，但是jpa只是一个接口定义如何将对象映射到数据库，具体实现可使用hibernate
  */
 @Data
 @Builder
