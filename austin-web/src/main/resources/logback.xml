@@ -4,6 +4,7 @@
 
     <contextName>austin</contextName>
 
+    <!-- 通过日志框架slf4j + logback, 实现日志写文件并且每日压缩归档 -->
     <!-- 设置日志输出路径  可以使“${}”来使用变量。-->
     <property name="log.path" value="logs"/>
 

@@ -18,7 +18,8 @@ import java.util.concurrent.ExecutorService;
 /**
  * 存储 每种消息类型 与 TaskPending 的关系
  *
- * @author 3y
+ * pendingHolder的设计思想：从MQ获取信息后，去重和发送都是网络IO密集型，为了提高吞吐量，需要一层缓冲
+ * 想到线程池本身基于生产者-消费者模式，提高消费能力， mq  -- pendingCache -- execute(task)
  */
 @Component
 public class TaskPendingHolder {

@@ -27,9 +27,8 @@ import java.io.File;
 import java.util.List;
 
 /**
- * 邮件发送处理
- *
- * @author 3y
+ * 邮件发送处理Handler
+ * slf4j(Simple log facade for java，简单日志门面) 是一个接口，减少日志框架带来的差异，背后具体实现可以是log4j、logback等
  */
 @Component
 @Slf4j

@@ -69,6 +69,9 @@
         <spring-boot-configuration-processor.version>2.5.6</spring-boot-configuration-processor.version>
     </properties>
 
+    <!-- 分包：一个模块下新建package controller/service/dao,
+         分模块：按功能分模块，可以复用到其它项目
+         父模块pom里dependencyManagement 只是版本声明， 子模块引入后才是真正下载到项目路径 -->
     <dependencyManagement>
         <dependencies>
             <!--本地依赖，按需引入-->

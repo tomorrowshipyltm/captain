@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author 3y
+ * 模板方法模式：baseHandler是一个抽象类，其它handler具体实现handle()
  * 发送各个渠道的handler
  */
 public abstract class BaseHandler implements Handler {

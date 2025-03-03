@@ -33,7 +33,7 @@ public class FrequencyDeduplicationService extends AbstractDeduplicationService 
      * <p>
      * key ： receiver + sendChannel
      * <p>
-     * 一天内一个用户只能收到某个渠道的消息 N 次
+     * 一天内一个用户只能收到某个渠道的消息 N 次 , 不用考虑template
      *
      * @param taskInfo
      * @param receiver

@@ -20,9 +20,9 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * 发送接口
- *
- * @author 3y
+ * 发送接口 2个考虑：
+ * 1. 为啥需要MQ: 异步解耦高并发量，并且很多消息发送结果都是异步，比如短信、push，并且可能出错超时
+ * 2. 接口轻量：比如consumer pipeline里的discard、shield、deduplication 都可以放到发送时，但是这不够轻量
  */
 @Service
 public class SendServiceImpl implements SendService {
