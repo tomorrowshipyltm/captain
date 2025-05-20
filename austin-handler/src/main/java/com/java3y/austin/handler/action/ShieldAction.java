@@ -20,10 +20,9 @@ import java.time.LocalDateTime;
  * 屏蔽消息
  * 1. 当接收到该消息是夜间，直接屏蔽（不发送）
  * 2. 当接收到该消息是夜间，次日9点发送
- * example:当消息下发至austin平台时，已经是凌晨1点，业务希望此类消息在次日的早上9点推送
+ * example:当消息下发至平台时，已经是凌晨1点，业务希望此类消息在次日的早上9点推送
  * (配合 分布式任务定时任务框架搞掂)
  *
- * @author 3y
  */
 @Service
 public class ShieldAction implements BusinessProcess<TaskInfo> {
@@ -50,6 +49,10 @@ public class ShieldAction implements BusinessProcess<TaskInfo> {
             return;
         }
 
+        /**
+         * 中断pipeline，context.setNeedBreak(true)
+         * 对于night_shield_but_next_day_send，发送到redis 队列，并设置过期时间1天
+         */
         if (LocalDateTime.now().getHour() < NIGHT) {
             if (ShieldType.NIGHT_SHIELD.getCode().equals(taskInfo.getShieldType())) {
                 logUtils.print(AnchorInfo.builder().state(AnchorState.NIGHT_SHIELD.getCode())

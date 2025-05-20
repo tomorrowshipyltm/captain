@@ -6,8 +6,7 @@ import lombok.ToString;
 
 /**
  * 屏蔽类型
- *
- * @author 3y
+ * 10 夜间不屏蔽、  20 夜间屏蔽、 30 次日发送
  */
 @Getter
 @ToString

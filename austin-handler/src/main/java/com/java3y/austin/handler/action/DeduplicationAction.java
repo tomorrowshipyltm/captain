@@ -22,7 +22,8 @@ import java.util.Objects;
  * 1. 根据相同内容N分钟去重（SlideWindowLimitService）
  * 2. 相同的渠道一天内频次去重（SimpleLimitService）
  *
- * @author 3y
+ * 本质是： 基于redis，在一段时间内发送次数超过N次， 构建不同key=channel_receiver  和 templateId_content_receiver
+ * 然后在taskInfo.remove(receiver), 如果receiver为空，直接setNeedBreak(true)
  */
 @Service
 public class DeduplicationAction implements BusinessProcess<TaskInfo> {

@@ -12,8 +12,7 @@ import java.util.Set;
 
 /**
  * 发送任务信息
- *
- * @author 3y
+ * 最终会放到消息队列，mq.publish(topic, jsonValue)
  */
 @Data
 @Builder

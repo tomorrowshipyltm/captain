@@ -2,3 +2,5 @@
 logs/*
 **/target/
 austin-handler/target/*
+austin-common/target/*
+austin-web/target/*

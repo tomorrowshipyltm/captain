@@ -18,8 +18,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * Task 执行器
- *
- * @author 3y
+ * 每个发送任务taskInfo，都经过pipeline处理，processContrller.process(context)
  */
 @Data
 @Accessors(chain = true)

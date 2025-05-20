@@ -22,7 +22,8 @@ import java.util.Collections;
  * <p>
  * example:当消息下发至austin平台时，已经是凌晨1点，业务希望此类消息在次日的早上9点推送
  *
- * @author 3y
+ * 早上9点定时任务执行，从redis里获取key=night_shield_but_next_day_send的taskInfoList,每个taskInfo对应一个task提交到threadPool执行pipeline
+ * redisTemplate.opsForList.leftPop(key)
  */
 @Service
 @Slf4j

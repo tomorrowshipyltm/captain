@@ -12,8 +12,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * 发送消息，路由到对应的渠道下发消息
- *
- * @author 3y
+ * 不同消息consumer 线程池隔离，通过handlerHolder.route().do()
  */
 @Service
 public class SendMessageAction implements BusinessProcess<TaskInfo> {
